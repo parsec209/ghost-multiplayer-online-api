@@ -1,0 +1,10 @@
+AUTH0_SPA_URL={{URL for the front-end application}}
+AUTH0_DOMAIN={{Get from your Auth0 account, will end in "auth0.com" if you are not using a custom domain}}
+AUTH0_API_URL={{URL for this API, i.e. http://localhost:3000 during dev}}
+AUTH0_AUDIENCE={{Get from your Auth0 account, this is the "Identifier" found in the Custom API general settings}}
+AUTH0_M2M_CLIENT_ID={{Get from your Auth0 account, this is the "Client ID" found in your Machine to Machine application settings}}
+AUTH0_M2M_CLIENT_SECRET={{Get from your Auth0 account, this is the "Client Secret" found in your Machine to Machine application settings}}
+DB_URL={{URL to your PostgreSQL db}}
+MERRIAM_WEBSTER_COLLEGIATE_DICTIONARY={{Merriam-Webster's collegiate dictionary API key}}
+SENDGRID_API_KEY={{Twilio Sendgrid API key}}
+SENDGRID_EMAIL={{Email address used by Sendgrid to send the game alert emails}}
