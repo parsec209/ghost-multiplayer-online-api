@@ -1,21 +1,20 @@
-import dotenv from "dotenv";
-dotenv.config();
+// import dotenv from "dotenv";
+// dotenv.config();
 import { updateGameFromEvent } from "./services/game-service";
 import errorHandler from "./util/error-handler";
-import http from "http";
-import app from "./app";
+import { createServer } from "http";
 import { Server } from "socket.io";
+import app from "./app";
 import sequelize from "./db";
 import { GameModel, GameInviteAttributes } from "./models/game-model";
 
 const port = process.env.PORT || 3000;
-const server = http.createServer(app);
+const httpServer = createServer(app);
 const clientURL = process.env.AUTH0_SPA_URL!;
 
-const io = new Server(server, {
+const io = new Server(httpServer, {
   cors: {
     origin: clientURL,
-    credentials: true,
   },
 });
 
@@ -56,7 +55,7 @@ io.on("connection", (socket) => {
 
 (async () => {
   await sequelize.sync();
-  server.listen(port, () => {
+  httpServer.listen(port, () => {
     console.log(`Server started on port ${port}`);
   });
 })();
