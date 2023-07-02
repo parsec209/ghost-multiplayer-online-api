@@ -53,12 +53,12 @@ const GameModel = sequelize.define<GameModel>("Game", {
   invitee: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: { len: [1, 20] },
+    validate: { len: [1, 30] },
   },
   inviter: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: { len: [1, 20] },
+    validate: { len: [1, 30] },
   },
   roundTurns: {
     type: DataTypes.ARRAY({
@@ -97,12 +97,12 @@ const GameModel = sequelize.define<GameModel>("Game", {
   turn: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: { len: [1, 20] },
+    validate: { len: [1, 30] },
   },
   winner: {
     type: DataTypes.STRING,
     allowNull: false,
-    validate: { len: [1, 20] },
+    validate: { len: [1, 30] },
     defaultValue: "N/A",
   },
   inviteeScores: {
