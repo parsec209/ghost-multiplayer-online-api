@@ -95,9 +95,8 @@ const updateGameFromEvent = async (
             roundWinners.push(invitee);
           }
           if (
-            //CHANGE TO ghost!!!!!!!!!!!!!!!!
-            inviteeScores[inviteeScores.length - 1] === "GH" ||
-            inviterScores[inviterScores.length - 1] === "GH"
+            inviteeScores[inviteeScores.length - 1] === "GHOST" ||
+            inviterScores[inviterScores.length - 1] === "GHOST"
           ) {
             game.status = "completed";
             game.winner = turn === invitee ? inviter : invitee;
@@ -150,13 +149,14 @@ const updateGameFromEvent = async (
         roundWinners.push(inviter);
       }
       if (
-        //CHANGE LATER TO GHOST!!!!
-        inviteeScores[inviteeScores.length - 1] === "GH" ||
-        inviterScores[inviterScores.length - 1] === "GH"
+        inviteeScores[inviteeScores.length - 1] === "GHOST" ||
+        inviterScores[inviterScores.length - 1] === "GHOST"
       ) {
         game.status = "completed";
         game.winner =
-          inviteeScores[inviteeScores.length - 1] === "GH" ? inviter : invitee;
+          inviteeScores[inviteeScores.length - 1] === "GHOST"
+            ? inviter
+            : invitee;
         game.turn = "N/A";
       } else {
         const [playerOne, playerTwo] = roundTurns[roundTurns.length - 1];
